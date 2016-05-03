@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <table class = "table table-striped">
+
+      <tr class="thead-default">
+        <th scope="row"><Strong><h4>Title</h4></Strong></th>
+        <th scope="row" colspan="2"><Strong><h4>Options</h4></Strong></th>
+      </tr>
+
+        <% for(var i=0; i< articles.length; i++) {%>
+        <tr>
+            <td>
+                <a href="/admin/viewpage/<%= articles[i]._id%>" ><h4 id = "article-title"><%- articles[i].title %></h4></a>
+            </td>
+            <td>
+                <a href = "/admin/delete/<%= articles[i]._id%>" class="btn btn-danger">X</a>
+            </td>
+            <td>
+                <a href = "/admin/newpage/<%= articles[i]._id%>" class="btn btn-info">Update</a>
+
+
+            </td>
+        </tr>
+        <% } %>
+
+
+
+
+    </table>
+    <a href = "/admin/newpage/" class = "btn btn-success"> Add new page </a>
+
+
+  </body>
+</html>
